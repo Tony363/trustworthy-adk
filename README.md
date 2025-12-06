@@ -47,13 +47,26 @@ def delete_user(user_id: str) -> str:
     """Delete a user account - SENSITIVE OPERATION"""
     return f"User {user_id} deleted"
 
-# Create agent with security plugins
+# Create agent with Action-Selector Pattern (no plugins needed)
 agent = ActionSelectorAgent(
     model="gemini-2.5-flash",
-    tools=[check_order_status, delete_user],
-    plugins=[
-        HITLToolPlugin(sensitive_tools=["delete_user"])
-    ]
+    name="secure_agent",
+    description="Security-focused agent",
+    tools=[check_order_status, delete_user]
+)
+
+# For Human-in-the-Loop with standard ADK agents:
+from google.adk.agents import LlmAgent
+from google.adk.runners import InMemoryRunner
+
+hitl_agent = LlmAgent(
+    model="gemini-2.5-flash",
+    tools=[check_order_status, delete_user]
+)
+
+runner = InMemoryRunner(
+    agent=hitl_agent,
+    plugins=[HITLToolPlugin(sensitive_tools=["delete_user"])]
 )
 ```
 
@@ -65,10 +78,10 @@ trustworthy-adk/
 │   ├── agents/                         # Secure agent implementations
 │   │   ├── __init__.py
 │   │   └── action_selector.py          # Action-Selector Pattern agent
-│   ├── plugins/                        # Security plugins
+│   ├── plugins/                        # Security plugins for ADK
 │   │   ├── __init__.py
-│   │   ├── hitl_tool.py                # Human-in-the-Loop plugin
-│   │   └── soft_instruction_control.py # Soft Instruction Defense
+│   │   ├── hitl_tool.py                # Human-in-the-Loop plugin (BasePlugin)
+│   │   └── soft_instruction_control.py # Soft Instruction Defense (BasePlugin)
 │   ├── analysis/                       # Analysis and profiling tools
 │   │   ├── __init__.py
 │   │   └── agentic_profiler/           # Agent behavior analysis
@@ -84,10 +97,9 @@ trustworthy-adk/
 │       │   ├── email_tool.py
 │       │   ├── mock.py                 # Mock data for testing
 │       │   └── user.py                 # User simulation
-│       ├── agent.py                    # Example agent setup
+│       ├── agent.py                    # Workspace agent with Soft Instruction Defense
 │       ├── eval_config.json            # Evaluation configuration
 │       ├── conversation_scenarios.json # Test scenarios
-│       └── IMPROVEMENT_PLAN.md         # Modernization roadmap
 ├── tests/                              # Test suite
 │   ├── __init__.py
 │   ├── conftest.py                     # Test configuration
@@ -104,44 +116,67 @@ trustworthy-adk/
 
 ### Action Selector Agent
 
-Implements the **Action-Selector Pattern** for maximum security against prompt injection:
+Implements the **Action-Selector Pattern** for maximum security against prompt injection by extending `LlmAgent` directly:
 
-- **Single-step execution**: No feedback loops that can be exploited
+- **Single-step execution**: Enforces `max_iterations=1` to prevent feedback loops
 - **Predefined tools only**: Cannot create or modify tools dynamically  
-- **Immunity to IPI**: Tool results don't feed back to the LLM
+- **Immunity to IPI**: Intercepts and blocks tool results from feeding back to the LLM
 - **Minimal autonomy**: Restricted to selecting from approved actions
+- **Direct LlmAgent extension**: No plugins required, security built into the agent class
 
 ```python
 from trustworthy import create_action_selector_agent
 
 agent = create_action_selector_agent(
     tools=[check_order_status, reset_password],
-    name="customer_service"
+    model="gemini-2.5-flash",
+    name="customer_service",
+    description="Customer service action selector"
 )
 ```
 
 ### Human-in-the-Loop (HITL) Plugin
 
-Requires human approval for sensitive operations:
+ADK plugin (extends `BasePlugin`) that requires human approval for sensitive operations:
 
 ```python
 from trustworthy import HITLToolPlugin
+from google.adk.runners import InMemoryRunner
 
+# HITL plugin works with ADK runners
 hitl_plugin = HITLToolPlugin(
     sensitive_tools=["delete_user", "transfer_funds", "send_email"]
+)
+
+# Use with InMemoryRunner or other ADK runners
+runner = InMemoryRunner(
+    agent=your_agent,
+    plugins=[hitl_plugin]
 )
 ```
 
 ### Soft Instruction Defense Plugin
 
-Implements iterative prompt sanitization based on the research paper ["Soft Instruction De-escalation Defense"](https://arxiv.org/pdf/2510.21057):
+ADK plugin (extends `BasePlugin`) that implements iterative prompt sanitization based on the research paper ["Soft Instruction De-escalation Defense"](https://arxiv.org/pdf/2510.21057):
 
 ```python
 from trustworthy import SoftInstructionDefensePlugin
+from trustworthy.plugins.soft_instruction_control import SoftInstructionDefenseConfig
+
+# Configure the defense plugin
+config = SoftInstructionDefenseConfig(
+    enable_logging=True,
+    max_iterations=5
+)
 
 defense_plugin = SoftInstructionDefensePlugin(
-    max_iterations=5,
-    halt_on_detection=True
+    config=config
+)
+
+# Use with ADK runner
+runner = InMemoryRunner(
+    agent=your_agent,
+    plugins=[defense_plugin]
 )
 ```
 
