@@ -1,69 +1,136 @@
 “Agent Development Kit.” n.d. Accessed November 26, 2025. https://google.github.io/adk-docs.
+
 Agentbeats Competition Info Session - 11.6. n.d.
+
 “Agentic AI Red Teaming Guide | CSA.” n.d. Accessed November 26, 2025. https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide.
+
 “Agents Rule of Two: A Practical Approach to AI Agent Security.” n.d. Accessed December 6, 2025. https://ai.meta.com/blog/practical-ai-agent-security/.
+
 Amironesei, Razvan. 2025. Assessing Risks and Impacts of AI (ARIA): Pilot Evaluation Report. NIST AI NIST AI 700-2. National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.700-2.
+
 Andriushchenko, Maksym, Alexandra Souly, Mateusz Dziemian, et al. 2025. “AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents.” arXiv:2410.09024. Preprint, arXiv, April 18. https://doi.org/10.48550/arXiv.2410.09024.
+
 ARC Prize. n.d. “ARC Prize - Leaderboard.” Accessed November 26, 2025. https://arcprize.org/leaderboard.
+
 Balunović, Mislav, Luca Beurer-Kellner, Marc Fischer, and Martin Vechev. n.d. AI Agents with Formal Security Guarantees.
+
 Beurer-Kellner, Luca, Beat Buesser, Ana-Maria Creţu, et al. 2025. “Design Patterns for Securing LLM Agents against Prompt Injections.” arXiv:2506.08837. Preprint, arXiv, June 27. https://doi.org/10.48550/arXiv.2506.08837.
+
 Bisconti, Piercosma, Matteo Prandi, Federico Pierucci, et al. 2025. “Adversarial Poetry as a Universal Single-Turn Jailbreak Mechanism in Large Language Models.” arXiv:2511.15304. Preprint, arXiv, November 20. https://doi.org/10.48550/arXiv.2511.15304.
+
 Chan, Alan, Kevin Wei, Sihao Huang, et al. 2025. “Infrastructure for AI Agents.” arXiv:2501.10114. Preprint, arXiv, June 19. https://doi.org/10.48550/arXiv.2501.10114.
+
 Chang, Amy, Nicholas Conley, Harish Santhanalakshmi Ganesan, and Adam Swanda. 2025. “Death by a Thousand Prompts: Open Model Vulnerability Analysis.” arXiv:2511.03247. Preprint, arXiv, November 5. https://doi.org/10.48550/arXiv.2511.03247.
+
 “Code Execution with MCP: Building More Efficient AI Agents.” n.d. Accessed November 26, 2025. https://www.anthropic.com/engineering/code-execution-with-mcp.
+
 ControlArena. n.d. “ControlArena.” Accessed November 30, 2025. https://control-arena.aisi.org.uk/.
+
 Debenedetti, Edoardo, Ilia Shumailov, Tianqi Fan, et al. 2025. “Defeating Prompt Injections by Design.” arXiv:2503.18813. Preprint, arXiv, June 24. https://doi.org/10.48550/arXiv.2503.18813.
 Díaz, Santiago, Christoph Kern, and Kara Olive. n.d. Google’s Approach for Secure AI Agents: An Introduction.
+
 Editor, OWASPGenAIProject. n.d. “Securing Agentic Applications Guide 1.0.” OWASP Gen AI Security Project. Accessed November 26, 2025. https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/.
+
 “Effective Harnesses for Long-Running Agents.” n.d. Accessed November 26, 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents.
+
 “Failing to Understand the Exponential, Again.” n.d. Accessed September 28, 2025. https://www.julian.ac/blog/2025/09/27/failing-to-understand-the-exponential-again/.
+
 Feng, K. J. Kevin, David W. McDonald, and Amy X. Zhang. 2025. “Levels of Autonomy for AI Agents.” arXiv:2506.12469. Preprint, arXiv, July 28. https://doi.org/10.48550/arXiv.2506.12469.
+
 GitHub. n.d. “Www-Project-Ai-Testing-Guide/PDFGenerator/V1.0/OWASP-AI-Testing-Guide-v1.Pdf at D641514cbd73a0a197ea4f814ddb198285a19447 · OWASP/Www-Project-Ai-Testing-Guide.” Accessed November 26, 2025. https://github.com/OWASP/www-project-ai-testing-guide/blob/d641514cbd73a0a197ea4f814ddb198285a19447/PDFGenerator/V1.0/OWASP-AI-Testing-Guide-v1.pdf.
+
 Greenberg, Craig, Patrick Hall, Theodore Jensen, Kristen Greene, and Razvan Amironesei. 2025. “Branching Out: Broadening AI Measurement and Evaluation with Measurement Trees.” arXiv:2509.26632. Version 1. Preprint, arXiv, September 30. https://doi.org/10.48550/arXiv.2509.26632.
+
 Hu, Haitao, Peng Chen, Yanpeng Zhao, and Yuqi Chen. 2025. “AgentSentinel: An End-to-End and Real-Time Security Defense Framework for Computer-Use Agents.” arXiv:2509.07764. Preprint, arXiv, September 9. https://doi.org/10.48550/arXiv.2509.07764.
+
 Huang, Yue, Hang Hua, Yujun Zhou, et al. 2025. “Building a Foundational Guardrail for General Agentic Systems via Synthetic Data.” arXiv:2510.09781. Version 1. Preprint, arXiv, October 10. https://doi.org/10.48550/arXiv.2510.09781.
+
 Inspect. n.d. “Inspect.” Accessed November 30, 2025. https://inspect.aisi.org.uk/.
+
 “Introducing Advanced Tool Use on the Claude Developer Platform.” n.d. Accessed November 26, 2025. https://www.anthropic.com/engineering/advanced-tool-use.
+
 “Introducing Claude Opus 4.5.” n.d. Accessed December 3, 2025. https://www.anthropic.com/news/claude-opus-4-5.
+
 “Introducing Docent.” n.d. Accessed November 26, 2025. https://transluce.org/introducing-docent.
+
 Jia, Yuqi, Yupei Liu, Zedian Shao, Jinyuan Jia, and Neil Gong. 2025. “PromptLocate: Localizing Prompt Injection Attacks.” arXiv:2510.12252. Preprint, arXiv, October 17. https://doi.org/10.48550/arXiv.2510.12252.
+
 “John_Sotiropoulos-OWASP Top 10 for Agentic Applications - London Chapter.Pdf.” n.d. Accessed December 2, 2025. https://docs.google.com/viewer?url=https%3A%2F%2Fraw.githubusercontent.com%2FOWASP%2Fwww-chapter-london%2Frefs%2Fheads%2Fmaster%2Fassets%2Fslides%2FJohn_Sotiropoulos-OWASP+Top+10+for+Agentic+Applications+-+London+Chapter.pdf.
+
 Kapoor, Sayash, Benedikt Stroebl, Peter Kirgis, et al. 2025. “Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation.” arXiv:2510.11977. Preprint, arXiv, October 13. https://doi.org/10.48550/arXiv.2510.11977.
+
 Kapoor, Sayash, Benedikt Stroebl, Zachary S. Siegel, Nitya Nadgir, and Arvind Narayanan. 2024. “AI Agents That Matter.” arXiv:2407.01502. Preprint, arXiv, July 1. https://doi.org/10.48550/arXiv.2407.01502.
+
 Kasirzadeh, Atoosa, and Iason Gabriel. 2025. “Characterizing AI Agents for Alignment and Governance.” arXiv:2504.21848. Preprint, arXiv, April 30. https://doi.org/10.48550/arXiv.2504.21848.
+
 Korbak, Tomek, Joshua Clymer, Benjamin Hilton, Buck Shlegeris, and Geoffrey Irving. 2025. “A Sketch of an AI Control Safety Case.” arXiv:2501.17315. Preprint, arXiv, January 28. https://doi.org/10.48550/arXiv.2501.17315.
+
 Kraprayoon, Jam, Zoe Williams, and Rida Fayyaz. 2025. “AI Agent Governance: A Field Guide.” arXiv:2505.21808. Preprint, arXiv, May 27. https://doi.org/10.48550/arXiv.2505.21808.
+
 Liu, Bang, Xinfeng Li, Jiayi Zhang, et al. 2025. “Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems.” arXiv:2504.01990. Preprint, arXiv, August 2. https://doi.org/10.48550/arXiv.2504.01990.
+
 “LlamaFirewall | LlamaFirewall.” n.d. Accessed September 30, 2025. https://meta-llama.github.io/PurpleLlama/LlamaFirewall/.
+
 “LLM Prompt Injection Prevention - OWASP Cheat Sheet Series.” n.d. Accessed November 26, 2025. https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html.
+
 Majumdar, Subhabrata, Brian Pendleton, and Abhishek Gupta. 2025. “Red Teaming AI Red Teaming.” arXiv:2507.05538. Preprint, arXiv, October 30. https://doi.org/10.48550/arXiv.2507.05538.
+
 “Measuring AI Ability to Complete Long Tasks.” 2025. METR Blog, March 19. https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/.
+
 Minto, Mary Beth. 2025. “Announcing the CoSAI Principles for Secure-by-Design Agentic Systems.” Coalition for Secure AI, July 16. https://www.coalitionforsecureai.org/announcing-the-cosai-principles-for-secure-by-design-agentic-systems/.
+
 “Mitigating the Risk of Prompt Injections in Browser Use.” n.d. Accessed November 26, 2025. https://www.anthropic.com/research/prompt-injection-defenses.
+
 Mohammadi, Mahmoud, Yipeng Li, Jane Lo, and Wendy Yip. 2025. “Evaluation and Benchmarking of LLM Agents: A Survey.” Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2, August 3, 6129–39. https://doi.org/10.1145/3711896.3736570.
+
 Nasr, Milad, Nicholas Carlini, Chawin Sitawarin, et al. 2025. “The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against Llm Jailbreaks and Prompt Injections.” arXiv:2510.09023. Preprint, arXiv, October 10. https://doi.org/10.48550/arXiv.2510.09023.
+
 NVIDIA Technical Blog. 2023. “Best Practices for Securing LLM-Enabled Applications.” November 15. https://developer.nvidia.com/blog/best-practices-for-securing-llm-enabled-applications/.
+
 NVIDIA Technical Blog. 2025a. “Agentic Autonomy Levels and Security.” February 25. https://developer.nvidia.com/blog/agentic-autonomy-levels-and-security/.
+
 NVIDIA Technical Blog. 2025b. “Modeling Attacks on AI-Powered Apps with the AI Kill Chain Framework.” September 11. https://developer.nvidia.com/blog/modeling-attacks-on-ai-powered-apps-with-the-ai-kill-chain-framework/.
+
 Panfilov, Alexander, Paul Kassianik, Maksym Andriushchenko, and Jonas Geiping. 2025. “Capability-Based Scaling Laws for LLM Red-Teaming.” arXiv:2505.20162. Preprint, arXiv, May 26. https://doi.org/10.48550/arXiv.2505.20162.
+
 “Petri: An Open-Source Auditing Tool to Accelerate AI Safety Research.” n.d. Accessed December 3, 2025. https://alignment.anthropic.com/2025/petri/.
+
 Safety Center. n.d. “Google’s Secure AI Framework (SAIF) - Google Safety Centre.” Accessed December 4, 2025. https://safety.google/intl/en_in/safety/saif/.
+
 Safety Research. (2025) 2025. Safety-Research/Petri. Python. August 19, Released December 4. https://github.com/safety-research/petri.
+
 Schmotz, David, Sahar Abdelnabi, and Maksym Andriushchenko. 2025. “Agent Skills Enable a New Class of Realistic and Trivially Simple Prompt Injections.” arXiv:2510.26328. Preprint, arXiv, October 30. https://doi.org/10.48550/arXiv.2510.26328.
+
 “Second Key Update: Technical Safeguards and Risk Management | International AI Safety Report.” n.d. Accessed November 26, 2025. https://internationalaisafetyreport.org/publication/second-key-update-technical-safeguards-and-risk-management.
+
 Shi, Chongyang, Sharon Lin, Shuang Song, et al. 2025. “Lessons from Defending Gemini Against Indirect Prompt Injections.” arXiv:2505.14534. Preprint, arXiv, May 20. https://doi.org/10.48550/arXiv.2505.14534.
+
 Shi, Tianneng, Jingxuan He, Zhun Wang, et al. 2025. “Progent: Programmable Privilege Control for LLM Agents.” arXiv:2504.11703. Preprint, arXiv, August 30. https://doi.org/10.48550/arXiv.2504.11703.
-Simonovich, Vitaly. 2025. “Cato CTRL™ Threat Research: HashJack - Novel Indirect Prompt Injection Against AI Browser Assistants.” Cato Networks, November 25. https://www.catonetworks.com/blog/cato-ctrl-hashjack-first-known-indirect-prompt-injection/.
+
+Simonovich, Vitaly. 2025. “Cato CTRLTM Threat Research: HashJack - Novel Indirect Prompt Injection Against AI Browser Assistants.” Cato Networks, November 25. https://www.catonetworks.com/blog/cato-ctrl-hashjack-first-known-indirect-prompt-injection/.
+
 SlidesLive. n.d. “39043359 · Jailbreaking LLMs and Agentic Systems: Attacks, Defenses, and Evaluations.” Accessed November 30, 2025. https://slideslive.com/embed/presentation/39043359?js_embed_version=3&embed_init_token=eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NjQ1NTE3MjEsImV4cCI6MTc2NDY4MTMyMSwidSI6eyJ1dWlkIjoiZTQ1NGI1YTAtNjYyMy00MmQ5LWI4MjMtMTNlZWE3Mzg5NzlkIiwiaSI6bnVsbCwiZSI6bnVsbCwibSI6ZmFsc2V9LCJkIjoiaWNtbC5jYyJ9.CTOJeo_PbSIfQ2zwNhl5jTHFp06sTwmeqPmQdB93IXU&embed_parent_url=https%3A%2F%2Ficml.cc%2Fvirtual%2F2025%2F40010&embed_origin=https%3A%2F%2Ficml.cc&embed_container_id=presentation-embed-39043359&auto_load=true&auto_play=false&zoom_ratio=&disable_fullscreen=false&locale=en&vertical_enabled=true&vertical_enabled_on_mobile=false&allow_hidden_controls_when_paused=true&fit_to_viewport=true&custom_user_id=&user_uuid=e454b5a0-6623-42d9-b823-13eea738979d.
+
 Smith, Andrew L., Felix Greaves, and Trishan Panch. 2023. “Hallucination or Confabulation? Neuroanatomy as Metaphor in Large Language Models.” PLOS Digital Health 2 (11): e0000388. https://doi.org/10.1371/journal.pdig.0000388.
+
 Terekhov, Mikhail, Alexander Panfilov, Daniil Dzenhaliou, et al. 2025. “Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols.” arXiv:2510.09462. Preprint, arXiv, October 10. https://doi.org/10.48550/arXiv.2510.09462.
+
 “The Agentic AI Security Scoping Matrix: A Framework for Securing Autonomous AI Systems | AWS Security Blog.” 2025. November 21. https://aws.amazon.com/blogs/security/the-agentic-ai-security-scoping-matrix-a-framework-for-securing-autonomous-ai-systems/.
+
 Walter, Nils Philipp, Chawin Sitawarin, Jamie Hayes, David Stutz, and Ilia Shumailov. 2025. “Soft Instruction De-Escalation Defense.” arXiv:2510.21057. Preprint, arXiv, October 24. https://doi.org/10.48550/arXiv.2510.21057.
+
 Wang, Zizhao, Dingcheng Li, Vaishakh Keshava, et al. 2025. “Adversarial Reinforcement Learning for Large Language Model Agent Safety.” arXiv:2510.05442. Preprint, arXiv, October 6. https://doi.org/10.48550/arXiv.2510.05442.
+
 Wen, Yuxin, Arman Zharmagambetov, Ivan Evtimov, et al. 2025. “RL Is a Hammer and LLMs Are Nails: A Simple Reinforcement Learning Recipe for Strong Prompt Injection.” arXiv:2510.04885. Preprint, arXiv, October 6. https://doi.org/10.48550/arXiv.2510.04885.
+
 Willison, Simon. n.d.-a. “New Prompt Injection Papers: Agents Rule of Two and The Attacker Moves Second.” Simon Willison’s Weblog. Accessed December 3, 2025. https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/.
+
 Willison, Simon. n.d.-b. “The Lethal Trifecta for AI Agents: Private Data, Untrusted Content, and External Communication.” Simon Willison’s Weblog. Accessed September 30, 2025. https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/.
+
 Yueh-Han, Chen, Nitish Joshi, Yulin Chen, Maksym Andriushchenko, Rico Angell, and He He. 2025. “Monitoring Decomposition Attacks in LLMs with Lightweight Sequential Monitors.” arXiv:2506.10949. Preprint, arXiv, June 14. https://doi.org/10.48550/arXiv.2506.10949.
+
 Zhang, Kaiyuan, Zian Su, Pin-Yu Chen, Elisa Bertino, Xiangyu Zhang, and Ninghui Li. 2025. “LLM Agents Should Employ Security Principles.” arXiv:2505.24019. Preprint, arXiv, May 29. https://doi.org/10.48550/arXiv.2505.24019.
+
 Zhu, Yuxuan, Tengjun Jin, Yada Pruksachatkun, et al. 2025. “Establishing Best Practices for Building Rigorous Agentic Benchmarks.” arXiv:2507.02825. Preprint, arXiv, August 7. https://doi.org/10.48550/arXiv.2507.02825.
-Zou, Andy, Maxwell Lin, Eliot Jones, et al. 2025. “Security Challenges in AI Agent Deployment: Insights from a Large Scale Public Competition.” arXiv:2507.20526. Preprint, arXiv, July 28. https://doi.org/10.48550/arXiv.2507.20526.
+
+Zou, Andy, Maxwell Lin, Eliot Jones, et al. 2025. “Security Challenges in AI Agent Deployment: Insights from a Large Scale Public C
