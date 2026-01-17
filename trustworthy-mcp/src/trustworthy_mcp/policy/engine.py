@@ -1,5 +1,7 @@
 """Policy engine - orchestrates the security pipeline."""
 
+from __future__ import annotations
+
 import logging
 import os
 from dataclasses import dataclass
@@ -390,6 +392,7 @@ class PolicyEngine:
             return f"Approval {approval_id} not found"
 
         status_info = [
+            f"Approval ID: {approval.approval_id}",
             f"Status: {approval.status.value}",
             f"Tool: {approval.tool_name}",
             f"Created: {approval.created_at.isoformat()}",

@@ -1,7 +1,12 @@
 """Tests for approval manager."""
 
 import pytest
+import sys
+import os
 from datetime import datetime, timedelta
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'trustworthy-core', 'src'))
 
 from trustworthy_mcp.approval.manager import (
     ApprovalManager,

@@ -6,7 +6,10 @@ This server implements trustworthy-adk security patterns for Claude Code:
 - Audit logging for all tool calls
 """
 
+from __future__ import annotations
+
 import asyncio
+import json
 import logging
 import os
 from typing import Any
@@ -23,6 +26,7 @@ from trustworthy_mcp.approval.manager import ApprovalManager
 from trustworthy_mcp.audit.logger import AuditLogger
 from trustworthy_mcp.policy.engine import PolicyEngine
 from trustworthy_mcp.tools.registry import ToolRegistry
+from trustworthy_mcp.resources.profiler import SecurityProfileResource
 
 logger = logging.getLogger(__name__)
 
@@ -57,9 +61,13 @@ class TrustworthyMCPServer:
             aws_region=self.aws_region,
         )
 
+        # Initialize security profile resource
+        self.profile_resource = SecurityProfileResource(self.audit_logger)
+
         # Create MCP server
         self.server = Server("trustworthy-mcp")
         self._register_handlers()
+        self._register_resources()
 
     def _register_handlers(self) -> None:
         """Register MCP protocol handlers."""
@@ -276,12 +284,102 @@ class TrustworthyMCPServer:
                         "required": ["approval_id"],
                     },
                 ),
+                # Security profiling tool
+                Tool(
+                    name="security_profile",
+                    description="Get security profile metrics and radar chart visualization",
+                    inputSchema={
+                        "type": "object",
+                        "properties": {
+                            "window_minutes": {
+                                "type": "integer",
+                                "description": "Time window in minutes (default: 60)",
+                                "default": 60,
+                            },
+                            "format": {
+                                "type": "string",
+                                "enum": ["text", "json", "svg", "all"],
+                                "description": "Output format (default: text)",
+                                "default": "text",
+                            },
+                        },
+                    },
+                ),
             ]
 
         @self.server.call_tool()
         async def call_tool(name: str, arguments: dict[str, Any]) -> CallToolResult:
             """Handle tool calls through the security pipeline."""
+            # Handle security_profile tool directly (not through policy engine)
+            if name == "security_profile":
+                return await self._handle_security_profile(arguments)
             return await self._handle_tool_call(name, arguments)
+
+    def _register_resources(self) -> None:
+        """Register MCP resources."""
+        from mcp.types import Resource
+
+        @self.server.list_resources()
+        async def list_resources() -> list[Resource]:
+            """List available resources."""
+            return [
+                Resource(
+                    uri="security://profile/current",
+                    name="Security Profile",
+                    description="Current security profile metrics and scores",
+                    mimeType="application/json",
+                ),
+                Resource(
+                    uri="security://profile/chart",
+                    name="Security Radar Chart",
+                    description="SVG radar chart visualization of security profile",
+                    mimeType="image/svg+xml",
+                ),
+            ]
+
+        @self.server.read_resource()
+        async def read_resource(uri: str) -> str:
+            """Read a security resource."""
+            if uri == "security://profile/current":
+                return self.profile_resource.get_profile_json()
+            elif uri == "security://profile/chart":
+                return self.profile_resource.get_radar_chart_svg()
+            else:
+                raise ValueError(f"Unknown resource: {uri}")
+
+    async def _handle_security_profile(
+        self, arguments: dict[str, Any]
+    ) -> CallToolResult:
+        """Handle security_profile tool calls.
+
+        This tool provides security metrics and visualization without
+        going through the policy engine (it's a read-only introspection tool).
+        """
+        window_minutes = arguments.get("window_minutes", 60)
+        output_format = arguments.get("format", "text")
+
+        try:
+            if output_format == "text":
+                result = self.profile_resource.get_summary(window_minutes)
+            elif output_format == "json":
+                result = self.profile_resource.get_profile_json(window_minutes)
+            elif output_format == "svg":
+                result = self.profile_resource.get_radar_chart_svg(window_minutes)
+            elif output_format == "all":
+                all_formats = self.profile_resource.get_all_formats(window_minutes)
+                result = json.dumps(all_formats, indent=2)
+            else:
+                result = self.profile_resource.get_summary(window_minutes)
+
+            return CallToolResult(
+                content=[TextContent(type="text", text=result)],
+                isError=False,
+            )
+        except Exception as e:
+            return CallToolResult(
+                content=[TextContent(type="text", text=f"Error: {e!s}")],
+                isError=True,
+            )
 
     async def _handle_tool_call(
         self, tool_name: str, arguments: dict[str, Any]

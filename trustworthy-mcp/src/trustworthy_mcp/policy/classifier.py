@@ -1,5 +1,7 @@
 """Injection detection classifier using AWS Bedrock."""
 
+from __future__ import annotations
+
 import json
 import logging
 import os
@@ -222,12 +224,18 @@ class HeuristicClassifier:
         "ignore previous instructions",
         "ignore all instructions",
         "disregard your instructions",
+        "disregard all instructions",
         "forget your instructions",
+        "forget all your instructions",  # Added
+        "forget all instructions",
         "you are now",
         "new instructions:",
-        "system prompt:",
+        "new instructions",
+        "system prompt",  # More flexible
         "reveal your prompt",
+        "reveal your system",  # Added
         "show your instructions",
+        "show me your instructions",  # Added
         "what are your instructions",
         "print your system",
         "output your system",
@@ -243,9 +251,12 @@ class HeuristicClassifier:
 
     # Patterns that may indicate data exfiltration
     EXFIL_PATTERNS = [
-        "send to",
+        "send to my",  # More specific
+        "send the",    # Catch "send the contents to"
+        "upload this to",  # Added for "upload this to http://..."
         "upload to",
         "post to webhook",
+        "to my webhook",  # Added
         "curl http",
         "wget http",
         "exfiltrate",

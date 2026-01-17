@@ -1,5 +1,7 @@
 """Approval manager for HITL (Human-in-the-Loop) operations."""
 
+from __future__ import annotations
+
 import hashlib
 import json
 import logging
@@ -7,7 +9,7 @@ import secrets
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from enum import Enum
-from typing import Any
+from typing import Any, Dict, Optional
 
 logger = logging.getLogger(__name__)
 
@@ -25,14 +27,14 @@ class PendingApproval:
     """A pending approval request."""
     approval_id: str
     tool_name: str
-    arguments: dict[str, Any]
+    arguments: Dict[str, Any]
     args_hash: str
     created_at: datetime
     expires_at: datetime
     status: ApprovalStatus = ApprovalStatus.PENDING
-    approved_at: datetime | None = None
-    approved_by: str | None = None
-    denial_reason: str | None = None
+    approved_at: Optional[datetime] = None
+    approved_by: Optional[str] = None
+    denial_reason: Optional[str] = None
 
 
 @dataclass
