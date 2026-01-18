@@ -33,6 +33,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
+    "anthropic>=0.40.0",
     "click>=8.3.1",
     "google-adk[eval]>=1.19.0",
     "google-genai>=1.52.0",

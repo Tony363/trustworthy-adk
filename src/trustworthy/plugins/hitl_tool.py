@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional
 
 from google.adk.plugins import BasePlugin
 from google.adk.tools import BaseTool, ToolContext
-from google.adk.types import Content
+from google.genai.types import Content
 
 
 class HITLToolPlugin(BasePlugin):
